@@ -11,10 +11,14 @@ console.log(lampImg)
 // Aggiungo degli eventi al click del bottone
 powerLampButton.addEventListener('click', function () { 
     console.log('ho cliccato sul bottone')
-    lampImg.src = './img/yellow_lamp.png'   // Richiamo la variabile della foto negli eventi e cambio la src
-    powerLampButton.innerText = 'Spegni'  // Cambio il testo all'interno dell'elemento html al click del suddetto bottone
+    
+    if (lampImg.src.includes('white_lamp.png')) {  // Richiamo la variabile della foto, se include il nome della foto originaria,
+            lampImg.src = '../img/yellow_lamp.png' // Cambio con la seconda immagine, luce accesa
+            powerLampButton.innerText = 'Spegni'   // Cambio il testo all'interno dell'elemento html al click del suddetto bottone
+        } else {
+            lampImg.src = '../img/white_lamp.png'  // Torno alla prima immagine, luce spenta
+            powerLampButton.innerText = 'Accendi'  // Cambio il testo all'interno dell'elemento html al click del suddetto bottone
+        }
 })
-
-
 
 
